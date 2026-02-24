@@ -159,6 +159,10 @@
   }
   h1 .accent { color: var(--red); }
 
+  @media (max-width: 900px) {
+    .hero-left { display: flex; flex-direction: column; align-items: center; }
+    .hero-sub { text-align: center; }
+  }
   .hero-sub {
     margin-top: 28px;
     color: var(--muted);
@@ -632,15 +636,17 @@
 
   /* MOBILE */
   @media (max-width: 900px) {
-    .hero { grid-template-columns: 1fr; padding-top: 100px; }
-    .hero-right { display: none; }
+    .hero { grid-template-columns: 1fr; padding-top: 100px; justify-items: center; text-align: center; }
+    .hero-right { display: flex; justify-content: center; margin-top: 40px; }
+    .avatar-frame { width: 260px; aspect-ratio: 3/4; }
+    .floating-badge { display: none; }
     .about-grid, .cricket-grid, .contact-inner { grid-template-columns: 1fr; gap: 40px; }
     .services-grid { grid-template-columns: 1fr; }
     .social-grid { grid-template-columns: 1fr 1fr; }
     .skills-grid { grid-template-columns: 1fr; }
     .nav-links { display: none; }
     .hamburger { display: flex; }
-    .hero-stats { gap: 24px; }
+    .hero-stats { gap: 24px; justify-content: center; }
   }
 
   /* MOBILE MENU */
@@ -726,7 +732,7 @@
     </p>
     <div class="hero-ctas">
       <a href="https://www.youtube.com/@maheshtarapathi" target="_blank" class="btn-primary">View My Work</a>
-      <a href="mailto:maheshtarapathi@gmail.com?subject=Lets Connect" class="btn-outline">Let's Talk</a>
+      <a href="#" onclick="window.location.href='mail'+'to:maheshtarapathi@gmail.com?subject=Lets Connect';return false;" class="btn-outline">Let's Talk</a>
     </div>
     <div class="hero-stats">
       <div>
@@ -1063,7 +1069,7 @@
   </div>
 </footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
   // CURSOR
   const cursor = document.getElementById('cursor');
   const follower = document.getElementById('cursorFollower');
@@ -1141,8 +1147,3 @@ Sent from maheshtarapathi.github.io'
       btn.style.background = '';
     }, 3000);
   }
-
-  // SCROLL REVEAL — start visible, animate on scroll
-  const reveals = document.querySelectorAll('.reveal');
-  reveals.forEach(el => el.classList.add('hidden'));
-  const ob
