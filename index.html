@@ -732,7 +732,7 @@
     </p>
     <div class="hero-ctas">
       <a href="https://www.youtube.com/@maheshtarapathi" target="_blank" class="btn-primary">View My Work</a>
-      <a href="#" onclick="window.location.href='mail'+'to:maheshtarapathi@gmail.com?subject=Lets Connect';return false;" class="btn-outline">Let's Talk</a>
+      <a href="#" onclick="openMail();return false;" class="btn-outline">Let's Talk</a>
     </div>
     <div class="hero-stats">
       <div>
@@ -1018,7 +1018,7 @@
       <div class="contact-info">
         <div class="contact-item">
           <div class="contact-item-label">Email</div>
-          <div class="contact-item-value"><a href="/cdn-cgi/l/email-protection#432e222b26302b372231223322372b2a03242e222a2f6d202c2e"><span class="__cf_email__" data-cfemail="513c303934223925302330213025393811363c30383d7f323e3c">[email&#160;protected]</span></a></div>
+          <div class="contact-item-value"><span style="cursor:pointer;color:var(--light);border-bottom:1px solid var(--red);" onclick="openMail()">maheshtarapathi&#64;gmail&#46;com</span></div>
         </div>
         <div class="contact-item">
           <div class="contact-item-label">Location</div>
@@ -1102,6 +1102,14 @@
   mobileClose.addEventListener('click', () => mobileMenu.classList.remove('open'));
   function closeMobile() { mobileMenu.classList.remove('open'); }
 
+  // EMAIL FUNCTION - split to avoid Cloudflare detection
+  function openMail() {
+    var u = 'maheshtarapathi';
+    var d = 'gmail.com';
+    var s = 'Lets Connect - from Website';
+    window.location.href = 'mai' + 'lto:' + u + '@' + d + '?subject=' + s;
+  }
+
   // CONTACT FORM - sends to Mahesh's Gmail via mailto
   function handleSubmit() {
     const name    = document.getElementById('senderName').value.trim();
@@ -1137,7 +1145,9 @@ You have a new message from your website!
 Sent from maheshtarapathi.github.io'
     );
 
-    window.location.href = 'mailto:maheshtarapathi@gmail.com?subject=' + mailSubject + '&body=' + mailBody;
+    var u = 'maheshtarapathi';
+    var d = 'gmail.com';
+    window.location.href = 'mai'+'lto:'+u+'@'+d+'?subject=' + mailSubject + '&body=' + mailBody;
 
     const btn = document.querySelector('.contact-form .btn-primary');
     btn.textContent = '✓ Opening your mail app...';
